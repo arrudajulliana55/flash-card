@@ -1,27 +1,109 @@
-{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body { 
-  display: flex; 
-  flex-direction: column; 
-  min-height: 100vh; 
-} 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #222;
+}
 
-.cabecalho { 
-    background-color: aqua;
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 15px 25px; 
-} 
-.cabecalho-link { 
-  color: #7783ec; 
-  text-decoration: none; 
-} 
+.cabecalho {
+  background-color: #f7f1c3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+}
+
+.cabecalho-titulo {
+  font-size: 1.3rem;
+  color: #1a1a1a;
+}
+
+.menu.inicial {
+  color: #2b2b8f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.principal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
 .cartao {
-width: 260px;
-height: 200px;
+  width: 260px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.cartao-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+}
+
+.cartao:hover .cartao-container {
+  transform: rotateY(180deg);
+}
+
+.cartao-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px #f7f1c3(0, 0, 0, 0.15);
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+.cartao-imagem {
+  width: 100%;
+  height: auto;
+  max-height: 110px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.cartao-frente {
+  background: #f7f1c3;
+}
+
+.cartao-verso {
+  background: #f7f1c3;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.carta-texto {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.rodape {
+  padding: 20px;
+  text-align: center;
+  background: #f7f1c3;
+}
+
+.rodape-texto {
+  color: #555555;
+  font-size: 0.95rem;
 }
